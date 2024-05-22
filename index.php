@@ -116,19 +116,19 @@ if (is_array($all_uid) && count($all_uid)  >  0) { ?>
     document.addEventListener('DOMContentLoaded', () => {
         let mount = document.getElementById('report');
         testApi('http://unknown_domain',                                  {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=not_200',        {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=empty_json',     {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=invalid_json',   {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=status_ok',      {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=status_warning', {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=status_error',   {}, 'post', mount);
-        testApi('http://microservice/get_errors.php?type=status_unknown', {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=not_200',        {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=empty_json',     {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=invalid_json',   {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=status_ok',      {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=status_warning', {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=status_error',   {}, 'post', mount);
+        testApi('http://microservice.loc/get_errors.php?type=status_unknown', {}, 'post', mount);
     });
 
     function onSendLink() {
         event.preventDefault();
         let mount = document.getElementById('report');
-        let service = 'http://microservice/get_short_link.php';
+        let service = 'http://microservice.loc/get_short_link.php';
         let method = event.target.method;
         let data = {};
         Array.prototype.forEach.call(event.target.elements, element => {
